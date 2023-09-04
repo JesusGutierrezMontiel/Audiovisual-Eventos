@@ -1,0 +1,165 @@
+:root{
+    background: #646976;
+background: -webkit-linear-gradient(0deg, #646976 0%, #000000 100%);
+background: linear-gradient(0deg, #646976 0%, #000000 100%);
+}
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+body{
+    font-family: Poppins;
+    height: 100vh;
+    padding: 32px;
+    display: grid;
+    place-items: center;
+    background-color: var(-- background);
+}
+.galeria{
+    display: flex;
+    background-color: var(-- background);
+    gap: 16px;
+}
+.tarjeta{
+    position: relative;
+    left: 0px;
+    width: 200px;
+    height: 220px;
+    background-color: var(-- background);
+    border-radius: 8px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    outline: 1px solid var(--  background);
+    overflow: hidden;
+}
+.tarjeta img{
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.tarjeta video{
+    height: 160px;
+    width: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tarjeta:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+.tarjeta:hover figcaption{
+    font-size: 0.6rem;
+    position: absolute;
+    height: 80px;
+    width: 200px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(to top, 
+    rgba(0,0,0,0.9) 0%,
+    rgba(0,0,0,0) 100%);
+    color: rgb(255, 255, 255);
+    left: 0px;
+    bottom: 0px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.tarjeta:hover ~ .tarjeta{
+    font-weight:  bold;
+    cursor: pointer;
+    transform: translateX(22px);
+}
+h3{
+    font-family: 'Courier New', Courier, monospace;    
+}
+
+ 
+ .glitch {
+    position: auto;
+    top: 40px; 
+    left: 280px;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: 5px;
+    z-index: 1;
+ }
+ 
+ .glitch:before,
+ .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+ }
+ 
+ .glitch:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #00ffff;
+    z-index: -1;
+ }
+ 
+ .glitch:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
+ }
+ 
+ @keyframes glitch-color {
+    0% {
+       transform: translate(0);
+    }
+ 
+    20% {
+       transform: translate(-3px, 3px);
+    }
+ 
+    40% {
+       transform: translate(-3px, -3px);
+    }
+ 
+    60% {
+       transform: translate(3px, 3px);
+    }
+ 
+    80% {
+       transform: translate(3px, -3px);
+    }
+ 
+    to {
+       transform: translate(0);
+    }
+ }
+ /* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 16px; /* Reduzca el relleno en pantallas pequeñas */
+    }
+
+    .galeria {
+        flex-direction: column; /* Cambie la disposición a una columna en pantallas pequeñas */
+    }
+
+    .tarjeta {
+        width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+    }
+
+    .tarjeta img,
+    .tarjeta video {
+        height: auto; /* Permita que la altura se ajuste automáticamente en pantallas pequeñas */
+    }
+
+    /* Otros ajustes necesarios para pantallas pequeñas */
+}
+
+/* Estilos para pantallas medianas y grandes */
+@media screen and (min-width: 769px) {
+    /* Estilos específicos para pantallas medianas y grandes aquí */
+}
+
