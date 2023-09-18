@@ -61,3 +61,48 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-09-18 13:20:07
+CREATE DATABASE AudioVisual;
+USE AudioVisual;
+
+
+CREATE TABLE cat_estatus(
+Id_estatus TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+descripcion VARCHAR(50));
+
+
+CREATE TABLE cat_permisos(
+Id_permiso TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+Descripcion VARCHAR(30),
+estatus );
+
+CREATE TABLE cat_usuario(
+Id_usuario TINYINT NOT NULL AUTO_INCREMENT,
+Nombre VARCHAR(50),
+contraseña VARCHAR(50),
+PRIMARY KEY (Id_usuario),
+estatus TINYINT);
+
+CREATE TABLE cat_salon(
+Id_salon TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+Descripcion VARCHAR(70),
+estatus TINYINT );
+
+CREATE TABLE cat_imagenes (
+    Id_imagen TINYINT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(50),
+    folder VARCHAR(100),
+    src VARCHAR(250),
+    creacion DATETIME NOT NULL
+);
+
+CREATE TABLE cat_videos(
+Id_video TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+titulo VARCHAR(50),
+folder VARCHAR(100),
+src VARCHAR(250),
+creacion DATETIME NOT NULL
+);
+select*from cat_imagenes;
+delete from cat_imagenes where Id_imagen= 3;
+UPDATE cat_imagenes SET src = 'Imagenes/imagen 6.jpeg' WHERE Id_imagen = '8';
+INSERT INTO cat_imagenes(Id_imagen,titulo,folder,src,creacion) values(null,'Imagen1','prueba','Imagenes/imagen 1.jpg',sysdate());
